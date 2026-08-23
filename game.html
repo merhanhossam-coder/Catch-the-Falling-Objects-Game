@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Catch the Falling Objects</title>
+<style>
+
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1e1e2f;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+
+  h1 {
+    margin: 15px 0 5px;
+  }
+
+  #scoreboard {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  #scoreboard span {
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  #gameArea {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: #2c2c44;
+    border: 3px solid #fff;
+    overflow: hidden;
+  }
+
+  #basket {
+    position: absolute;
+    bottom: 10px;
+    width: 80px;
+    height: 30px;
+    background: #ffb347;
+    border-radius: 8px;
+    left: 210px; 
+  }
+
+  .fallingObject {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #ff5c5c;
+    border-radius: 50%;
+    top: 0;
+  }
+
+  #gameOverScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #gameOverScreen h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  #restartBtn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #ffb347;
+  }
+
+  #instructions {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Catch the Falling Objects</h1>
+
+  <div id="scoreboard">
+    Score: <span id="score">0</span>
+    Lives: <span id="lives">3</span>
+  </div>
+
+  <div id="gameArea">
+    <div id="basket"></div>
+
+    <!-- Game over overlay, hidden until lives run out -->
+    <div id="gameOverScreen">
+      <h2>Game Over!</h2>
+      <p>Final Score: <span id="finalScore">0</span></p>
+      <button id="restartBtn">Restart</button>
+    </div>
+  </div>
+
+  <p id="instructions">Use ← and → arrow keys, or move your mouse, to control the basket.</p>
+
+  <script src="game.js"></script>
+</body>
+</html>
